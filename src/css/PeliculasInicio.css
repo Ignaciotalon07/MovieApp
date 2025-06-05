@@ -1,0 +1,32 @@
+.peliculas-inicio {
+  padding: 5rem 2rem 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.peliculas-inicio h2 {
+  font-size: 15px;
+}
+.lista-peliculas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Cartelito */
+.cartel {
+  background-color: #282c34;
+  color: #fff;
+  padding: 0.6rem 1rem;
+
+  font-size: 10px;
+  text-align: center;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cartel h3 {
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  color: #ffd700;
+}

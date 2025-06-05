@@ -1,0 +1,7 @@
+.container-peliculas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 100px 2rem 2rem; /* <- Espacio arriba para que no se meta debajo del header */
+  justify-content: center;
+}
