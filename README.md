@@ -10,7 +10,6 @@
 - ⭐ Guardar películas favoritas en localStorage
 - 📝 Ver detalles como sinopsis, póster, fecha, calificación, etc.
 - 💬 Chat IA integrado (MovieBot) para ayudarte a encontrar películas
-- 📱 Diseño responsive (adaptado a celulares y tablets)
 
 ---
 
