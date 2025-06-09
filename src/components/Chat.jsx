@@ -29,7 +29,7 @@ export default function ChatFlotante() {
     setInput("");
     setCargando(true);
 
-    const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY; // Asegurate de tener esto en tu .env
+    const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY;
 
     try {
       const respuesta = await fetch(
@@ -41,8 +41,8 @@ export default function ChatFlotante() {
             Authorization: `Bearer ${apiKey}`,
           },
           body: JSON.stringify({
-            model: "mistralai/mistral-7b-instruct", // o el modelo que quieras usar
-            max_tokens: 1000, // 🔥 esto limita el tamaño de la respuesta
+            model: "mistralai/mistral-7b-instruct",
+            max_tokens: 1000,
             messages: [
               {
                 role: "system",

@@ -10,15 +10,18 @@ export default function Favoritas({ favoritas, eliminarDeFavoritos }) {
         </p>
       ) : (
         favoritas.map((pelicula) => (
-          <CardMovie
-            key={pelicula.imdbID}
-            titulo={pelicula.Title}
-            poster={pelicula.Poster}
-            year={pelicula.Year}
-            imdbID={pelicula.imdbID}
-            esFavorita={true}
-            onEliminarFavorito={() => eliminarDeFavoritos(pelicula.imdbID)}
-          />
+          <div>
+            <h3 className="title-favoritas">Aqui tus peliculas favoritas</h3>
+            <CardMovie
+              key={pelicula.imdbID}
+              titulo={pelicula.Title}
+              poster={pelicula.Poster}
+              year={pelicula.Year}
+              imdbID={pelicula.imdbID}
+              esFavorita={true}
+              onEliminarFavorito={() => eliminarDeFavoritos(pelicula.imdbID)}
+            />
+          </div>
         ))
       )}
     </div>

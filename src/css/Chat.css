@@ -6,7 +6,6 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* Botón flotante más chico y sobrio */
 .boton-chat {
   color: #fff;
   border: none;
@@ -24,7 +23,6 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
 }
 
-/* Caja del chat más chica y moderna */
 .chat-box {
   width: 280px;
   height: 360px;
@@ -48,7 +46,6 @@
   }
 }
 
-/* Cabecera */
 .chat-header {
   background-color: #f2f2f2;
   color: #222;
@@ -69,7 +66,6 @@
   cursor: pointer;
 }
 
-/* Mensajes */
 .chat-mensajes {
   flex: 1;
   padding: 10px;
@@ -102,7 +98,6 @@
   margin-right: auto;
 }
 
-/* Input */
 .chat-input {
   display: flex;
   padding: 8px;
