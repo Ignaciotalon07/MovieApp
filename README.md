@@ -1,12 +1,34 @@
-# React + Vite
+# 🎬 MovieApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**MovieApp** es una aplicación web que te permite buscar, descubrir y guardar tus películas favoritas. Ideal para los amantes del cine que quieren encontrar qué ver rápidamente, con una experiencia intuitiva y moderna.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funcionalidades
 
-## Expanding the ESLint configuration
+- 🔍 Búsqueda en tiempo real de películas por nombre
+- ⭐ Guardar películas favoritas en localStorage
+- 📝 Ver detalles como sinopsis, póster, fecha, calificación, etc.
+- 💬 Chat IA integrado (MovieBot) para ayudarte a encontrar películas
+- 📱 Diseño responsive (adaptado a celulares y tablets)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tecnologías usadas
+
+- **React** (Vite)
+- **JavaScript**
+- **CSS Modules**
+- **OpenRouter API** (para el chat recomendador)
+- **OmDB API** (para buscar películas)
+
+---
+
+## 📦 Instalación y uso
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/Ignaciotalon07/MovieApp.git
+cd MovieApp
+```
