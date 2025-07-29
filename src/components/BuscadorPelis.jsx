@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import CardMovie from "./CardMovie";
-import "../css/BuscadorPelis.css";
 
 export default function BuscadorPelis({
   busqueda,
@@ -31,17 +30,27 @@ export default function BuscadorPelis({
   }, [busqueda]);
 
   return (
-    <div className="container-peliculas">
-      {peliculas.map((pelicula) => (
-        <CardMovie
-          key={pelicula.imdbID}
-          titulo={pelicula.Title}
-          poster={pelicula.Poster}
-          year={pelicula.Year}
-          esFavorita={favoritas.some((fav) => fav.imdbID === pelicula.imdbID)}
-          onAgregarFavorito={() => agregarAFavoritos(pelicula)}
-        />
-      ))}
+    <div className="w-full px-4 py-8 max-w-7xl mx-auto">
+      {peliculas.length === 0 ? (
+        <p className="text-center text-gray-400 text-sm">
+          No se encontraron películas.
+        </p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {peliculas.map((pelicula) => (
+            <CardMovie
+              key={pelicula.imdbID}
+              titulo={pelicula.Title}
+              poster={pelicula.Poster}
+              year={pelicula.Year}
+              esFavorita={favoritas.some(
+                (fav) => fav.imdbID === pelicula.imdbID
+              )}
+              onAgregarFavorito={() => agregarAFavoritos(pelicula)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import CardMovie from "./CardMovie";
-import "../css/PeliculasInicio.css";
 
 export default function PeliculasInicio({ agregarAFavoritos, favoritas }) {
   const [peliculas, setPeliculas] = useState([]);
@@ -25,17 +24,19 @@ export default function PeliculasInicio({ agregarAFavoritos, favoritas }) {
   };
 
   return (
-    <div className="peliculas-inicio">
-      <div className="cartel">
-        <h3>¿No sabes que peli mirar hoy?</h3>
-        <p>
-          No te preocupes! tenemos un chat las 24hs para sacarte dudas de
-          cualquier pelicula que quieras, recomendarte las mejores peliculas del
-          momento o volver a ver esas joyitas que creias olvidadas.
+    <div className="w-full px-4 py-8 max-w-7xl mx-auto">
+      <div className="bg-gray-900 text-white rounded-lg shadow-md p-6 text-center mb-8">
+        <h3 className="text-xl font-bold text-yellow-400 mb-2">
+          ¿No sabes qué peli mirar hoy?
+        </h3>
+        <p className="text-sm text-gray-300">
+          ¡No te preocupes! Tenemos un chat las 24hs para sacarte dudas de
+          cualquier película que quieras, recomendarte las mejores del momento o
+          volver a ver esas joyitas que creías olvidadas.
         </p>
       </div>
 
-      <div className="lista-peliculas">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {[...new Map(peliculas.map((p) => [p.imdbID, p])).values()].map(
           (peli) => (
             <CardMovie
@@ -51,8 +52,11 @@ export default function PeliculasInicio({ agregarAFavoritos, favoritas }) {
         )}
       </div>
 
-      <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
-        <button onClick={cargarMasPeliculas} className="btn-cargar-mas">
+      <div className="text-center mt-8">
+        <button
+          onClick={cargarMasPeliculas}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-sm font-semibold transition"
+        >
           🎬 Cargar más películas
         </button>
       </div>

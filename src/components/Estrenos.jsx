@@ -1,7 +1,5 @@
-// src/components/Estrenos.jsx
 import React from "react";
 import CardMovie from "./CardMovie";
-import "../css/CardMovie.css";
 
 const estrenosFake = [
   {
@@ -50,17 +48,19 @@ const estrenosFake = [
 
 export default function Estrenos({ agregarAFavoritos, favoritas }) {
   return (
-    <div className="container-peliculas">
-      {estrenosFake.map((pelicula) => (
-        <CardMovie
-          key={pelicula.imdbID}
-          titulo={pelicula.Title}
-          poster={pelicula.Poster}
-          year={pelicula.Year}
-          esFavorita={favoritas.some((fav) => fav.imdbID === pelicula.imdbID)}
-          onAgregarFavorito={() => agregarAFavoritos(pelicula)}
-        />
-      ))}
+    <div className="w-full px-4 py-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {estrenosFake.map((pelicula) => (
+          <CardMovie
+            key={pelicula.imdbID}
+            titulo={pelicula.Title}
+            poster={pelicula.Poster}
+            year={pelicula.Year}
+            esFavorita={favoritas.some((fav) => fav.imdbID === pelicula.imdbID)}
+            onAgregarFavorito={() => agregarAFavoritos(pelicula)}
+          />
+        ))}
+      </div>
     </div>
   );
 }
