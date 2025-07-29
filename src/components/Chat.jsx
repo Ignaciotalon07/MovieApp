@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../css/Chat.css";
 
 export default function ChatFlotante() {
   const [abierto, setAbierto] = useState(false);
@@ -95,32 +94,50 @@ export default function ChatFlotante() {
   };
 
   return (
-    <div className="chat-flotante">
+    <div className="fixed bottom-6 right-6 z-50">
+      {/* Chat box */}
       {abierto && (
-        <div className="chat-box">
-          <div className="chat-header">
-            🎬 Asistente de Películas
-            <button className="cerrar" onClick={toggleChat}>
+        <div className="w-80 bg-gray-900 text-white rounded-lg shadow-xl flex flex-col overflow-hidden animate-fadeIn">
+          {/* Header */}
+          <div className="flex justify-between items-center bg-gray-800 px-4 py-2 font-semibold text-yellow-400">
+            <span>🎬 Asistente de Películas</span>
+            <button
+              onClick={toggleChat}
+              className="text-gray-400 hover:text-yellow-400 transition"
+              aria-label="Cerrar chat"
+            >
               ✖
             </button>
           </div>
-          <div className="chat-mensajes">
+
+          {/* Mensajes */}
+          <div className="flex-1 overflow-y-auto px-4 py-3 space-y-2 max-h-96 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
             {mensajes.map((msg, index) => (
               <div
                 key={index}
-                className={`mensaje ${
-                  msg.rol === "user" ? "usuario" : "asistente"
+                className={`rounded-md p-2 max-w-[75%] ${
+                  msg.rol === "user"
+                    ? "bg-yellow-500 text-gray-900 self-end"
+                    : "bg-gray-700 text-yellow-300 self-start"
                 }`}
               >
                 {msg.contenido}
               </div>
             ))}
             {cargando && (
-              <div className="mensaje asistente">Escribiendo...</div>
+              <div className="bg-gray-700 text-yellow-300 rounded-md p-2 max-w-[75%]">
+                Escribiendo...
+              </div>
             )}
-            {error && <div className="mensaje error">{error}</div>}
+            {error && (
+              <div className="bg-red-600 text-white rounded-md p-2 max-w-[75%]">
+                {error}
+              </div>
+            )}
           </div>
-          <div className="chat-input">
+
+          {/* Input */}
+          <div className="flex border-t border-gray-700">
             <input
               type="text"
               placeholder="Recomendame una peli..."
@@ -128,17 +145,29 @@ export default function ChatFlotante() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               disabled={cargando}
+              className="flex-1 px-4 py-2 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
             />
-            <button onClick={enviarMensaje} disabled={cargando}>
+            <button
+              onClick={enviarMensaje}
+              disabled={cargando}
+              className="bg-yellow-500 hover:bg-yellow-600 disabled:opacity-50 disabled:cursor-not-allowed px-4 text-gray-900 font-semibold transition"
+            >
               Enviar
             </button>
           </div>
         </div>
       )}
 
-      <button className="boton-chat" onClick={toggleChat}>
-        💬
-      </button>
+      {/* Botón flotante */}
+      {!abierto && (
+        <button
+          onClick={toggleChat}
+          className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 rounded-full w-14 h-14 shadow-lg flex items-center justify-center text-2xl transition fixed bottom-6 right-6 z-50"
+          aria-label="Abrir chat"
+        >
+          💬
+        </button>
+      )}
     </div>
   );
 }
