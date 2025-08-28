@@ -14,7 +14,7 @@ export default function BuscadorPelis({
       return;
     }
 
-    fetch(`http://www.omdbapi.com/?apikey=fdc7a607&s=${busqueda}`)
+    fetch(`https://www.omdbapi.com/?apikey=fdc7a607&s=${busqueda}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.Search) {
