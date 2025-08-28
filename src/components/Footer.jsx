@@ -5,13 +5,11 @@ export default function Footer({ vista, setVista }) {
   return (
     <footer className="bg-gradient-to-r from-gray-800 via-gray-900 to-black text-gray-300 py-12 px-8 max-w-7xl mx-auto rounded-lg shadow-lg flex flex-col md:flex-row justify-between gap-12">
       <div className="flex flex-col items-center md:items-start space-y-4">
-        <a
-          href="#"
-          className="text-3xl font-thin flex items-center gap-2 drop-shadow-md"
-        >
-          <span>🎬</span> MovieApp
+        <a href="/" className="flex gap-3 items-center justify-center text-3xl">
+          <img src="/ico1.svg" alt="icono" className="h-8 w-8" />
+          <span>MovieApp</span>
         </a>
-        <p className="text-sm md:text-base max-w-xs italic text-gray-400">
+        <p className="text-sm md:text-base  max-w-xs italic text-gray-400">
           Todas las películas que buscas en un solo lugar
         </p>
       </div>

@@ -5,9 +5,9 @@ export default function Header({ vista, setVista, busqueda, setBusqueda }) {
 
   return (
     <header className="bg-gray-900 text-white px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-md">
-      <div className="text-3xl flex items-center gap-2 font-thin">
-        <a href="/">
-          <span>🎬</span>
+      <div className="text-3xl  font-thin">
+        <a href="/" className="flex gap-3 items-center justify-center">
+          <img src="/ico1.svg" alt="icono" className="h-8 w-8" />
           <span>MovieApp</span>
         </a>
       </div>

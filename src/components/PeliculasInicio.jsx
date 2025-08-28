@@ -55,7 +55,7 @@ export default function PeliculasInicio({ agregarAFavoritos, favoritas }) {
       <div className="text-center mt-8">
         <button
           onClick={cargarMasPeliculas}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-sm font-semibold transition"
+          className="bg-yellow-400 hover:bg-yellow-600 text-black px-6 py-3 rounded-lg text-sm font-semibold transition cursor-pointer"
         >
           🎬 Cargar más películas
         </button>
