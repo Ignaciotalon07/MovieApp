@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CardMovie from "./CardMovie";
 
 export default function BuscadorPelis({

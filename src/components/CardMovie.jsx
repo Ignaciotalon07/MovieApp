@@ -25,7 +25,7 @@ export default function CardMovie({
           onClick={onAgregarFavorito}
           className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm transition"
         >
-          ⭐ Agregar a Favoritas
+          Agregar a Favoritas
         </button>
       )}
 
@@ -34,7 +34,7 @@ export default function CardMovie({
           onClick={onEliminarFavorito}
           className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm transition"
         >
-          ❌ Eliminar de Favoritas
+          Eliminar de Favoritas
         </button>
       )}
 

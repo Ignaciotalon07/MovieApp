@@ -5,19 +5,30 @@ export default function Header({ vista, setVista, busqueda, setBusqueda }) {
 
   return (
     <header className="bg-gray-900 text-white px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4 shadow-md">
-      <div className="text-xl font-semibold flex items-center gap-2">
-        <span>🎬</span>
-        <span>MovieApp</span>
+      <div className="text-3xl flex items-center gap-2 font-thin">
+        <a href="/">
+          <span>🎬</span>
+          <span>MovieApp</span>
+        </a>
       </div>
 
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-md relative">
         <input
           type="text"
           placeholder="Buscar película..."
           value={busqueda}
           onChange={handleChange}
-          className="w-full px-4 py-2 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-2 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 pr-10" // agrego espacio a la derecha
         />
+
+        {busqueda && (
+          <button
+            onClick={() => setBusqueda("")}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+          >
+            ✕
+          </button>
+        )}
       </div>
 
       <nav className="flex gap-4">
