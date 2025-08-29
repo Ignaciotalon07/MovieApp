@@ -56,6 +56,7 @@ export default function Estrenos({ agregarAFavoritos, favoritas }) {
             titulo={pelicula.Title}
             poster={pelicula.Poster}
             year={pelicula.Year}
+            imdbID={pelicula.imdbID}
             esFavorita={favoritas.some((fav) => fav.imdbID === pelicula.imdbID)}
             onAgregarFavorito={() => agregarAFavoritos(pelicula)}
           />
